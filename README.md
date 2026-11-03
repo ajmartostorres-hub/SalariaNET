@@ -1,6 +1,12 @@
-# SalariaNet
+<p align="center">
+  <img src="assets/banner-salarianet.png"
+       alt="SalariaNet - Simulador de redes informáticas"
+       width="100%">
+</p>
 
-### Aprende, diseña y experimenta con redes informáticas.
+<p align="center">
+  <strong>Simulador de redes informáticas para el aprendizaje</strong>
+</p>
 
 **SalariaNet** es un simulador de redes informáticas desarrollado en Python y PySide6, diseñado para facilitar el aprendizaje de redes en el aula.
 
