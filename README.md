@@ -1,241 +1,251 @@
-<p align="center">
-  <img src="recursos/logo.png" alt="Logotipo de SalariaNet" width="180">
-</p>
+# SalariaNet
 
-<h1 align="center">SalariaNet</h1>
+### Aprende, diseña y experimenta con redes informáticas.
 
-<p align="center">
-  <b>Simulador de redes en español para el aula</b><br>
-  Dibuja una red, configura los equipos y mira cómo viajan los paquetes.<br>
-  Funciona en <b>Windows</b> y en <b>Linux</b>.
-</p>
+**SalariaNet** es un simulador de redes informáticas desarrollado en Python y PySide6, diseñado para facilitar el aprendizaje de redes en el aula.
 
-<p align="center">
-  <a href="../../releases/latest"><img src="https://img.shields.io/badge/Descargar-%C3%BAltima%20versi%C3%B3n-2ea44f?style=for-the-badge&logo=github" alt="Descargar la última versión"></a>
-</p>
+Permite crear topologías de red, conectar dispositivos, configurar routers y switches, asignar direcciones IP y observar cómo se comunican los equipos. Todo ello mediante una interfaz gráfica en español y un entorno pensado para experimentar y aprender.
 
-<p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/licencia-GPLv3%2B-blue" alt="Licencia GPL v3 o posterior"></a>
-  <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-0078D6?logo=windows" alt="Windows 10 y 11">
-  <img src="https://img.shields.io/badge/Ubuntu-20.04%2B-E95420?logo=ubuntu&logoColor=white" alt="Ubuntu 20.04 o posterior">
-  <img src="https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python&logoColor=white" alt="Python 3.8 o posterior">
-  <img src="https://img.shields.io/badge/Qt%206-PySide6-41CD52?logo=qt&logoColor=white" alt="PySide6 (Qt 6)">
-</p>
+Disponible para **Windows y Linux**.
 
-![Un esquema de SalariaNet: dos redes unidas por un router, con un punto de acceso WiFi y un ping en curso](docs/capturas/esquema.png)
+---
 
-SalariaNet es un simulador de redes al estilo de Cisco Packet Tracer, pensado para las clases de redes:
-todo en español, ligero y libre. Tiene tres formas de trabajar:
+## ¿Qué puedes hacer con SalariaNet?
 
-- **Simulado**: todo ocurre dentro del programa, con las IP del esquema.
-- **Real**: un PC del esquema es el ordenador de verdad, con su IP y sus órdenes `ping`, `tracert`…
-- **Intranet del aula**: los SalariaNet de varios ordenadores se unen y los paquetes viajan por la red del centro.
+SalariaNet reúne en una misma aplicación las herramientas necesarias para diseñar, configurar y comprender el funcionamiento de una red informática.
 
-## Descargar e instalar
+### Diseña tu propia red
 
-Las versiones listas para usar están en **[Releases](../../releases/latest)**
-([todas las versiones](../../releases)).
+- Crea redes con ordenadores, portátiles, servidores, impresoras y dispositivos móviles.
+- Incorpora routers, switches, hubs y puntos de acceso.
+- Conecta dispositivos mediante cable o WiFi.
+- Organiza la topología libremente sobre el área de trabajo.
+- Añade anotaciones para documentar tus diseños.
+
+### Configura los dispositivos
+
+- Asigna direcciones IP de forma manual o mediante DHCP.
+- Configura máscaras de subred, puertas de enlace y servidores DNS.
+- Administra routers y switches mediante una terminal de comandos.
+- Configura VLAN y enlaces troncales 802.1Q.
+- Establece rutas estáticas entre redes.
+- Comprueba las tablas ARP, MAC y las tablas de enrutamiento.
+
+### Observa cómo funciona la red
+
+- Ejecuta simulaciones paso a paso.
+- Visualiza el recorrido de los paquetes.
+- Consulta los eventos y protocolos que intervienen en la comunicación.
+- Comprueba el resultado de las conexiones.
+- Analiza los detalles de las diferentes capas de comunicación.
+
+---
+
+## Tres formas de trabajar
+
+SalariaNet ofrece tres modos de funcionamiento que permiten trabajar desde los conceptos básicos de redes hasta situaciones prácticas en una red real.
+
+### 01. Modo Simulado
+
+<sub>Aprendizaje y experimentación</sub>
+
+Toda la red funciona dentro del simulador. Los dispositivos, las direcciones IP y las comunicaciones se gestionan en el propio entorno de SalariaNet.
+
+Es ideal para diseñar topologías, realizar prácticas y comprender cómo funcionan los protocolos de red sin necesidad de disponer de equipos físicos.
+
+### 02. Modo Real
+
+<sub>Conexión con el ordenador físico</sub>
+
+Permite que uno de los ordenadores del esquema represente al equipo real en el que se está ejecutando SalariaNet.
+
+El dispositivo utiliza la configuración de red del ordenador y permite ejecutar comandos reales como `ping`, `tracert`, `nslookup` o `arp`.
+
+Así es posible relacionar el esquema diseñado con el funcionamiento de una red física.
+
+### 03. Intranet del aula
+
+<sub>Conecta los equipos de los alumnos</sub>
+
+Permite conectar diferentes instalaciones de SalariaNet a través de la red local del centro educativo.
+
+El profesor puede preparar una topología y los alumnos conectar sus propios equipos a ella.
+
+De esta manera, varios ordenadores pueden participar en una misma práctica y observar cómo se comunican a través de la red del aula.
+
+---
+
+## Herramientas integradas
+
+### Calculadora IP
+
+Una herramienta para comprender y calcular los parámetros fundamentales de una red:
+
+- Dirección de red.
+- Dirección de broadcast.
+- Primera y última dirección IP disponible.
+- Número de direcciones para equipos.
+- Representación binaria de la máscara.
+- Desarrollo de los cálculos.
+
+Incluye una memoria justificativa en PDF, especialmente pensada para trabajar el direccionamiento IP en ESO.
+
+También dispone de una versión independiente que funciona desde el navegador.
+
+### Calculadora y asignación automática de IP
+
+Permite distribuir automáticamente las direcciones IP de los dispositivos de una topología, utilizando direccionamiento estático o DHCP y teniendo en cuenta las rutas entre routers.
+
+Además, comprueba posibles errores de configuración en las direcciones IP.
+
+### Terminal de comandos
+
+Incluye una interfaz de comandos inspirada en Cisco IOS, con abreviaturas, ayuda contextual y diferentes modos de configuración.
+
+Permite trabajar con:
+
+- Interfaces de red.
+- VLAN y puertos troncales.
+- DHCP.
+- Rutas estáticas.
+- Tablas de enrutamiento.
+- Tablas ARP y MAC.
+- Spanning Tree simplificado.
+
+### Impresión y documentación
+
+Los esquemas y sus configuraciones pueden exportarse a PDF para documentar y entregar las prácticas realizadas.
+
+---
+
+## Descargar SalariaNet
+
+Puedes descargar las versiones preparadas para utilizar directamente desde GitHub.
+
+**[DESCARGAR SALARIANET — VERSIONES DISPONIBLES](https://github.com/ajmartostorres-hub/SalariaNET/releases)**
 
 ### Windows 10 y 11
 
-1. Descarga `SalariaNet.zip`.
-2. Descomprímelo (clic derecho → *Extraer todo*).
-3. Abre `SalariaNet.exe`. No hace falta instalar Python ni nada más.
+1. Descarga el archivo `SalariaNet.zip`.
+2. Descomprime su contenido.
+3. Ejecuta `SalariaNet.exe`.
 
-La primera vez que uses el modo Real o la Conexión aula, Windows preguntará si SalariaNet puede usar la
-red: hay que permitirlo en **redes privadas**.
+No necesitas instalar Python ni configurar dependencias adicionales.
 
 ### Ubuntu 20.04 o posterior (64 bits)
 
-1. Descarga el archivo `salarianet_…_amd64.deb`.
-2. En un terminal, desde la carpeta donde lo has descargado:
-
-   ```bash
-   sudo apt install ./salarianet_*_amd64.deb
-   ```
-
-   `apt` instala también las bibliotecas del sistema que falten (`dpkg -i` no lo hace).
-3. Ábrelo desde el menú de aplicaciones o con la orden `salarianet`. Los esquemas `.red` se abren con
-   doble clic.
-
-El paquete ya lleva PySide6 (Qt 6), así que no hace falta `pip`. Si el centro tiene el cortafuegos
-activado, hay que permitir SalariaNet una vez en cada ordenador:
+1. Descarga el paquete `.deb` correspondiente.
+2. Abre un terminal en la carpeta de descarga.
+3. Ejecuta:
 
 ```bash
-sudo ufw allow SalariaNet
+sudo apt install ./salarianet_*_amd64.deb
 ```
 
-Para desinstalarlo: `sudo apt remove salarianet`.
+4. Inicia SalariaNet desde el menú de aplicaciones o ejecutando:
 
-### Desde el código fuente (cualquier sistema)
+```bash
+salarianet
+```
 
-Hace falta Python 3.8 o posterior. Descarga el código (botón **Code → Download ZIP**).
+Para desinstalar:
 
-- **Windows**: doble clic en `iniciar.bat`, que instala PySide6 la primera vez.
-- **Linux**: en la carpeta del código, con un entorno virtual (en Ubuntu hace falta
-  `sudo apt install python3-venv libxcb-cursor0`):
+```bash
+sudo apt remove salarianet
+```
 
-  ```bash
-  python3 -m venv .venv
-  . .venv/bin/activate
-  pip install -r requirements.txt
-  python red_aula.py
-  ```
-
-Para abrir un esquema guardado: `python red_aula.py esquema.red`. También abre los esquemas de la
-versión 1.0.
-
-## Capturas
-
-| Simulación paso a paso | Terminal de un PC |
-|---|---|
-| ![Dos PDU simples: una correcta y otra en curso](docs/capturas/simulacion.png) | ![ping por nombre e ipconfig en el terminal de un PC](docs/capturas/terminal.png) |
-| **Router con órdenes de Cisco IOS** | **Calculadora IP** |
-| ![Configuración de un router con la CLI](docs/capturas/router_cli.png) | ![Calculadora IP con la IP en binario y las cuentas de cada resultado](docs/capturas/calculadora.png) |
-
-## Qué incluye
-
-| Packet Tracer | SalariaNet |
-|---|---|
-| PC, Laptop, Server, Printer | PC, Portátil, Servidor, Impresora |
-| Smartphone, Tablet, TV | Móvil, Tablet, Smart TV |
-| Hub, Switch 2960, Router, Access Point | Hub, Switch (24 Fa + 2 Gi), Router (4 Gi), Punto de acceso |
-| Conexión con cable o inalámbrica | Cualquier equipo va por cable o por WiFi (al punto de acceso, dentro de su alcance) |
-| Luces de enlace verde / rojo / ámbar | Igual (ámbar = puerto bloqueado por spanning tree) |
-| Puertos del router apagados al principio | Igual: hay que hacer `no shutdown` o marcar «Encendida» |
-| Desktop → IP Configuration (estática / DHCP) | Configuración IP con IP, máscara, puerta de enlace, DNS y DHCP |
-| Desktop → Command Prompt | Terminal: `ipconfig [/all /renew /release]`, `ping`, `tracert`, `nslookup`, `arp`, `mensaje`, `imprimir` |
-| Desktop → Web Browser | Navegador web (DNS + TCP + HTTP) |
-| Server → Services HTTP / DNS / DHCP | Servicios: páginas editables, registros DNS, pool DHCP |
-| CLI de Cisco IOS | CLI con las órdenes reales y abreviaturas (ver abajo) |
-| VLAN, troncales 802.1Q | `vlan`, `switchport mode access/trunk`, `switchport access vlan`, `interface range` |
-| Spanning tree | Simplificado: bloquea los enlaces redundantes entre switches |
-| DHCP en el router | `ip dhcp pool`, `network`, `default-router`, `dns-server`, `ip dhcp excluded-address` |
-| Rutas estáticas | `ip route` (y ruta por defecto 0.0.0.0 0.0.0.0) |
-| Modo simulación, lista de eventos, detalle de capas | Pausa (F5), Paso (F6), velocidad, filtros por protocolo, clic en el sobre |
-| Add Simple PDU | PDU simple, con lista de resultados Correcto / Fallido |
-| Notas en el lienzo | Nota |
-
-Además:
-
-- **Calcular IPs**: reparte las direcciones de todo el esquema de una vez (IP fija o DHCP), con las rutas
-  estáticas entre routers.
-- **Comprobación de IP fija**: si a un equipo se le pone una IP a mano y el resto va por DHCP, avisa si
-  no es de su red, si es la dirección de red o de broadcast, si ya la tiene otro equipo o si la puerta de
-  enlace no encaja.
-- **Impresora de red**: recibe los trabajos de `imprimir <ip> <texto>` y los muestra en «Trabajos impresos».
-- **Calculadora IP** (Herramientas → Calculadora IP, Ctrl+I): red, broadcast, primera y última IP,
-  número de equipos y la máscara en binario, con la cuenta de cada resultado. Trae una memoria justificativa
-  en PDF pensada para alumnos de ESO, y también funciona sola en el navegador
-  ([web/calculadora_ip.html](web/calculadora_ip.html)).
-- **Imprimir y memoria en PDF** (Archivo): el esquema y toda la configuración en un documento para entregar.
-
-Órdenes IOS admitidas (con abreviaturas, `?` para ayuda, `do` en modo configuración, Ctrl+Z):
-`enable`, `disable`, `configure terminal`, `hostname`, `interface`, `interface range`,
-`ip address`, `no ip address`, `shutdown`, `no shutdown`, `description`, `ip route`,
-`ip dhcp pool`/`network`/`default-router`/`dns-server`, `ip dhcp excluded-address`,
-`vlan`/`name`, `switchport mode access|trunk`, `switchport access vlan`, `ping`, `traceroute`,
-`show ip interface brief`, `show ip route`, `show running-config`, `show arp`,
-`show ip dhcp binding`, `show ip dhcp pool`, `show vlan [brief]`, `show mac address-table`,
-`show interfaces trunk`, `show spanning-tree`, `clear arp-cache`, `clear mac address-table`,
-`copy running-config startup-config`, `write`.
-
-Todavía **no** incluye: enrutamiento dinámico (RIP, OSPF), NAT, listas de acceso,
-router-on-a-stick (subinterfaces), Telnet/SSH, correo/FTP, tipos de cable
-(directo/cruzado) ni la vista física.
-
-## Modo Simulado y modo Real
-
-Un selector en la barra superior cambia todo el programa:
-
-- **Simulado**: todo ocurre dentro de SalariaNet, con las IP del esquema.
-- **Real**: un PC del esquema (con la etiqueta **REAL**) representa a este ordenador. Toma su IP,
-  máscara, puerta de enlace y DNS reales (en Windows los lee del sistema; en Linux, con `ip`). Su terminal
-  ejecuta de verdad `ping`, `tracert`, `ipconfig`, `nslookup` y `arp -a`; su navegador abre páginas reales;
-  y `mensaje <ip> <texto>` llega a otro ordenador que tenga SalariaNet abierto. Cuando se hace `ping` a un
-  ordenador con SalariaNet, en ese ordenador aparece un aviso.
-- Clic derecho en un PC → **Es este ordenador (modo real)** para elegir cuál es, o **Es otro ordenador
-  del aula (modo real)** para que represente a otro: se elige de la lista de ordenadores con SalariaNet
-  abierto o se escribe su IP a mano.
-
-El programa nunca cambia la configuración del ordenador: `ipconfig /renew` y `/release` no se permiten en
-modo Real. Al volver a Simulado se recupera la configuración del esquema, que es la que se guarda en el
-archivo.
-
-## Intranet del aula
-
-Cada **Conexión aula** es un cable que llega hasta SalariaNet abierto en otro ordenador. Los programas de
-la misma red **se descubren solos**, así que no hace falta escribir IPs:
-
-1. **Profesor**: un switch y tantas Conexiones aula como alumnos, conectadas al switch. No se configuran:
-   se quedan esperando.
-2. **Alumno**: su PC conectado a una Conexión aula → doble clic → elige el ordenador del profesor en la
-   lista → **Conectar**. Se usa sola una conexión libre del profesor, que se une al alumno
-   automáticamente.
-3. Si dos alumnos eligen la misma conexión, el segundo recibe el aviso de que está ocupada y elige otra.
-
-El punto de la nube se pone verde cuando los dos ordenadores se ven, y la barra de estado dice cuántos
-SalariaNet hay abiertos en el aula. Si la red del centro bloquea la difusión, queda la configuración manual
-(IP y puerto del otro equipo) en la misma ventana.
-
-SalariaNet usa los puertos **UDP 41000 a 41050** de la red local: el 41000 para descubrir los otros
-ordenadores, los mensajes y los avisos de ping, y del 41001 al 41050 para las Conexiones aula.
+---
 
 ## Documentación
 
-- **Guía de uso**: [Guia_SalariaNet_actualizada.pdf](Guia_SalariaNet_actualizada.pdf). Dentro del
-  programa, en Ayuda → Cómo se usa.
-- **Memoria justificativa de la calculadora IP**:
-  [docs/Memoria_calculadora_IP.pdf](docs/Memoria_calculadora_IP.pdf). Explica cómo se calculan la red, el
-  broadcast y el número de equipos, con las fórmulas.
+Para profundizar en el funcionamiento de la aplicación tienes disponibles los siguientes recursos:
 
-Las dos van también dentro de los instaladores: en la carpeta del `.zip` de Windows y en
-`/usr/share/doc/salarianet` en Ubuntu.
+- **Guía de usuario:** `docs/Guia_SalariaNet_actualizada.pdf`
+- **Memoria de la calculadora IP:** `docs/Memoria_calculadora_IP.pdf`
+- **Calculadora IP online:** `web/calculadora_ip.html`
 
-## Para desarrolladores
+También puedes consultar la ayuda integrada en el programa.
 
-```
-red_aula.py           arranque del programa
-redaula/
-  motor.py            simulación: equipos, interfaces, paquetes y protocolos
-  interfaz.py         ventana principal, lienzo y ventanas de cada equipo (PySide6)
-  ios.py              línea de comandos al estilo Cisco IOS
-  real.py             modo Real: configuración y órdenes del ordenador (Windows y Linux)
-  autoip.py           Calcular IPs y comprobación de las IP fijas
-  calculadora.py      calculadora IP
-  memoria.py          impresión y memoria en PDF
-recursos/             iconos y logotipo
-docs/                 guía, memoria de la calculadora y capturas
-web/                  calculadora IP en HTML5
-pruebas/              pruebas automáticas
-```
+---
 
-Cada prueba se ejecuta sola y guarda sus capturas en `pruebas/capturas`, por ejemplo:
+## Tecnologías utilizadas
+
+SalariaNet está desarrollado utilizando:
+
+| Tecnología | Utilización |
+|---|---|
+| Python | Lenguaje de programación |
+| PySide6 / Qt 6 | Interfaz gráfica |
+| PyInstaller | Distribución para Windows |
+| Debian packages | Distribución para Ubuntu |
+
+---
+
+## Funcionalidades en desarrollo
+
+SalariaNet es un proyecto en evolución. Entre las funcionalidades que todavía no están implementadas se encuentran:
+
+- Enrutamiento dinámico (RIP y OSPF).
+- NAT.
+- Listas de control de acceso (ACL).
+- Router-on-a-stick y subinterfaces.
+- Servicios Telnet y SSH.
+- Servicios de correo y FTP.
+- Configuración de tipos de cable.
+- Vista física de la infraestructura de red.
+
+---
+
+## Código fuente
+
+SalariaNet es un proyecto desarrollado en Python y organizado en diferentes módulos para facilitar su mantenimiento y ampliación.
+
+Si quieres consultar el código, colaborar o ejecutar el proyecto desde su código fuente, puedes utilizar este repositorio.
+
+**[Consultar el código fuente en GitHub](https://github.com/ajmartostorres-hub/SalariaNET)**
+
+### Ejecución desde el código fuente
+
+Requisitos: Python 3.8 o posterior.
 
 ```bash
-python3 pruebas/prueba_escenarios.py
+python -m venv .venv
 ```
 
-### Generar los instaladores
+En Windows:
 
-- **Windows**: `construir_exe.bat` (o `python construir_exe.py`) genera `dist/SalariaNet.zip` con
-  PyInstaller.
-- **Ubuntu**: `construir_deb.bat` en Windows, o `python3 construir_deb.py` en Linux, genera
-  `dist/salarianet_<versión>_amd64.deb`. Descarga PySide6 6.6.3.1 para Linux (la última versión que
-  funciona con el Python 3.8 de Ubuntu 20.04), así que no necesita herramientas de Debian.
+```bash
+.venv\Scripts\activate
+```
 
-Para publicar una versión, se crea una *release* en GitHub y se adjuntan los dos archivos de `dist/`.
+En Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+Instala las dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
+Ejecuta la aplicación:
+
+```bash
+python red_aula.py
+```
+
+---
 
 ## Licencia
 
-SalariaNet © 2026 Alfonso José Martos Torres, I.E.S. Ivlia Salaria.
+SalariaNet es software libre y se distribuye bajo los términos de la **GNU General Public License v3.0 o posterior (GPL-3.0-or-later)**.
 
-Este programa es software libre: puedes redistribuirlo y modificarlo según los términos de la
-**Licencia Pública General de GNU** publicada por la Free Software Foundation, ya sea la **versión 3** de
-la licencia o, a tu elección, **cualquier versión posterior**.
+Consulta el archivo `LICENSE` para conocer las condiciones de uso, modificación y distribución.
 
-Se distribuye con la esperanza de que sea útil, pero **sin ninguna garantía**, ni siquiera la garantía
-implícita de comerciabilidad o de idoneidad para un fin determinado. El texto completo de la licencia está
-en [LICENSE](LICENSE).
+---
 
-Los instaladores incluyen PySide6 y Qt 6 sin modificar, que se distribuyen con la licencia LGPL v3.
+**SalariaNet © 2026**
+
+*Una herramienta para aprender redes, experimentar con ellas y comprender cómo funciona Internet desde el aula.*
