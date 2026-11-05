@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="recursos/logo.png" alt="Logotipo de SalariaNet" width="160">
+  <img src="assets/banner-salarianet.jpg"
+       alt="Simulador de Redes para el Aula"
+       width="100%">
 </p>
 
 # SalariaNet — Simulador de Redes para el Aula
