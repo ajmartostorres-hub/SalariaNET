@@ -1,256 +1,124 @@
 <p align="center">
-  <img src="assets/banner-salarianet.jpg"
-       alt="SalariaNet - Simulador de redes informáticas"
-       width="100%">
+  <img src="recursos/logo.png" alt="Logotipo de SalariaNet" width="160">
 </p>
 
-<p align="center">
-  <strong>Simulador de redes informáticas para el aprendizaje</strong>
-</p>
-**SalariaNet** es un simulador de redes informáticas desarrollado en Python y PySide6, diseñado para facilitar el aprendizaje de redes en el aula.
+# SalariaNet — Simulador de Redes para el Aula
 
-Permite crear topologías de red, conectar dispositivos, configurar routers y switches, asignar direcciones IP y observar cómo se comunican los equipos. Todo ello mediante una interfaz gráfica en español y un entorno pensado para experimentar y aprender.
+[![Última Versión](https://img.shields.io/github/v/release/ajmartostorres-hub/SalariaNET?style=flat-square&color=blue)](https://github.com/ajmartostorres-hub/SalariaNET/releases)
+[![Descargar Executable](https://img.shields.io/badge/Descargar-.exe-brightgreen?style=flat-square&logo=windows)](https://github.com/ajmartostorres-hub/SalariaNET/releases/latest)
+[![Descargar .deb](https://img.shields.io/badge/Descargar-.deb-E95420?style=flat-square&logo=ubuntu&logoColor=white)](https://github.com/ajmartostorres-hub/SalariaNET/releases/latest)
+[![Licencia](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square)](LICENSE)
+[![Python](https://img.shields.io/badge/GUI-PySide6%20%2F%20Qt6-green.svg?style=flat-square)](https://pyside.org)
 
-Disponible para **Windows y Linux**.
+**SalariaNet** es una aplicación de escritorio para **Windows y Linux** diseñada para aprender redes en el aula:
+permite **dibujar esquemas de red, configurar los equipos y ver cómo viajan los paquetes** de un dispositivo a otro,
+al estilo de Cisco Packet Tracer, pero **sencillo, ligero, libre y completamente en español**.
 
----
+Combina una simulación paso a paso de los protocolos reales (Ethernet, ARP, IP, ICMP, DHCP, DNS, TCP y HTTP) con una
+**línea de comandos al estilo Cisco IOS** y un **modo real** en el que los equipos del esquema se comunican de verdad
+a través de la red del centro, sin necesidad de configuraciones avanzadas ni entornos de programación.
 
-## ¿Qué puedes hacer con SalariaNet?
-
-SalariaNet reúne en una misma aplicación las herramientas necesarias para diseñar, configurar y comprender el funcionamiento de una red informática.
-
-### Diseña tu propia red
-
-- Crea redes con ordenadores, portátiles, servidores, impresoras y dispositivos móviles.
-- Incorpora routers, switches, hubs y puntos de acceso.
-- Conecta dispositivos mediante cable o WiFi.
-- Organiza la topología libremente sobre el área de trabajo.
-- Añade anotaciones para documentar tus diseños.
-
-### Configura los dispositivos
-
-- Asigna direcciones IP de forma manual o mediante DHCP.
-- Configura máscaras de subred, puertas de enlace y servidores DNS.
-- Administra routers y switches mediante una terminal de comandos.
-- Configura VLAN y enlaces troncales 802.1Q.
-- Establece rutas estáticas entre redes.
-- Comprueba las tablas ARP, MAC y las tablas de enrutamiento.
-
-### Observa cómo funciona la red
-
-- Ejecuta simulaciones paso a paso.
-- Visualiza el recorrido de los paquetes.
-- Consulta los eventos y protocolos que intervienen en la comunicación.
-- Comprueba el resultado de las conexiones.
-- Analiza los detalles de las diferentes capas de comunicación.
+![Un esquema de SalariaNet: dos redes unidas por un router, con un punto de acceso WiFi y un ping en curso](docs/capturas/esquema.png)
 
 ---
 
-## Tres formas de trabajar
+## 📥 Descarga e Instalación (.exe y .deb)
 
-SalariaNet ofrece tres modos de funcionamiento que permiten trabajar desde los conceptos básicos de redes hasta situaciones prácticas en una red real.
+No necesitas instalar Python ni configurar dependencias. Puedes ejecutar **SalariaNet** directamente en tu equipo:
 
-### 01. Modo Simulado
+1. **Accede a las versiones oficiales:**
+   Dirígete a la sección de [**Lanzamientos / Releases**](https://github.com/ajmartostorres-hub/SalariaNET/releases).
 
-<sub>Aprendizaje y experimentación</sub>
+2. **Descarga el archivo de tu sistema:**
 
-Toda la red funciona dentro del simulador. Los dispositivos, las direcciones IP y las comunicaciones se gestionan en el propio entorno de SalariaNet.
+   | Sistema | Archivo |
+   |---|---|
+   | Windows 10 y 11 (64 bits) | `SalariaNet_Instalador.exe` |
+   | Windows 7 SP1 (32 bits) | `SalariaNet_Instalador_Win7.exe` |
+   | Ubuntu 20.04 o posterior (64 bits) | `salarianet_<versión>_amd64.deb` |
 
-Es ideal para diseñar topologías, realizar prácticas y comprender cómo funcionan los protocolos de red sin necesidad de disponer de equipos físicos.
+3. **Instala y ejecuta la aplicación:**
+   * **Windows:** haz doble clic sobre `SalariaNet_Instalador.exe` y sigue los pasos. Puedes instalarlo para todos los
+     usuarios (pide administrador y configura el cortafuegos) o solo para ti (sin administrador).
+   * **Linux:** abre un terminal en la carpeta de descarga y ejecuta:
 
-### 02. Modo Real
+     ```bash
+     sudo apt install ./salarianet_*_amd64.deb
+     ```
 
-<sub>Conexión con el ordenador físico</sub>
+     Después ábrelo desde el menú de aplicaciones o con la orden `salarianet`.
 
-Permite que uno de los ordenadores del esquema represente al equipo real en el que se está ejecutando SalariaNet.
-
-El dispositivo utiliza la configuración de red del ordenador y permite ejecutar comandos reales como `ping`, `tracert`, `nslookup` o `arp`.
-
-Así es posible relacionar el esquema diseñado con el funcionamiento de una red física.
-
-### 03. Intranet del aula
-
-<sub>Conecta los equipos de los alumnos</sub>
-
-Permite conectar diferentes instalaciones de SalariaNet a través de la red local del centro educativo.
-
-El profesor puede preparar una topología y los alumnos conectar sus propios equipos a ella.
-
-De esta manera, varios ordenadores pueden participar en una misma práctica y observar cómo se comunican a través de la red del aula.
+Los esquemas guardados (`.red`) se abren con doble clic. El programa **avisa solo cuando hay una versión nueva** en
+GitHub y la puede descargar e instalar (Ayuda → Buscar actualizaciones…).
 
 ---
 
-## Herramientas integradas
+## 🛡️ Nota sobre la advertencia de Microsoft Defender SmartScreen
 
-### Calculadora IP
+Al ejecutar un archivo `.exe` descargado de GitHub que no cuenta con un certificado digital comercial de pago, es
+normal que Windows muestre la advertencia *"Windows protegió su PC"*.
 
-Una herramienta para comprender y calcular los parámetros fundamentales de una red:
+### ¿Cómo omitir esta advertencia?
 
-- Dirección de red.
-- Dirección de broadcast.
-- Primera y última dirección IP disponible.
-- Número de direcciones para equipos.
-- Representación binaria de la máscara.
-- Desarrollo de los cálculos.
+1. Haz clic en el enlace **"Más información"** (*More info*) en la ventana flotante de SmartScreen.
+2. Haz clic en el botón **"Ejecutar de todos modos"** (*Run anyway*).
+3. La aplicación se instalará y se abrirá con normalidad.
 
-Incluye una memoria justificativa en PDF, especialmente pensada para trabajar el direccionamiento IP en ESO.
-
-También dispone de una versión independiente que funciona desde el navegador.
-
-### Calculadora y asignación automática de IP
-
-Permite distribuir automáticamente las direcciones IP de los dispositivos de una topología, utilizando direccionamiento estático o DHCP y teniendo en cuenta las rutas entre routers.
-
-Además, comprueba posibles errores de configuración en las direcciones IP.
-
-### Terminal de comandos
-
-Incluye una interfaz de comandos inspirada en Cisco IOS, con abreviaturas, ayuda contextual y diferentes modos de configuración.
-
-Permite trabajar con:
-
-- Interfaces de red.
-- VLAN y puertos troncales.
-- DHCP.
-- Rutas estáticas.
-- Tablas de enrutamiento.
-- Tablas ARP y MAC.
-- Spanning Tree simplificado.
-
-### Impresión y documentación
-
-Los esquemas y sus configuraciones pueden exportarse a PDF para documentar y entregar las prácticas realizadas.
+La primera vez que uses el **modo Real** o la **Conexión aula**, Windows preguntará si SalariaNet puede usar la red:
+hay que **permitirlo en redes privadas**. En Linux, si el cortafuegos está activado: `sudo ufw allow SalariaNet`.
 
 ---
 
-## Descargar SalariaNet
+## ✨ Características Principales
 
-Puedes descargar las versiones preparadas para utilizar directamente desde GitHub.
-
-**[DESCARGAR SALARIANET — VERSIONES DISPONIBLES](https://github.com/ajmartostorres-hub/SalariaNET/releases)**
-
-### Windows 10 y 11
-
-1. Descarga el archivo `SalariaNet.zip`.
-2. Descomprime su contenido.
-3. Ejecuta `SalariaNet.exe`.
-
-No necesitas instalar Python ni configurar dependencias adicionales.
-
-### Ubuntu 20.04 o posterior (64 bits)
-
-1. Descarga el paquete `.deb` correspondiente.
-2. Abre un terminal en la carpeta de descarga.
-3. Ejecuta:
-
-```bash
-sudo apt install ./salarianet_*_amd64.deb
-```
-
-4. Inicia SalariaNet desde el menú de aplicaciones o ejecutando:
-
-```bash
-salarianet
-```
-
-Para desinstalar:
-
-```bash
-sudo apt remove salarianet
-```
+* **Esquemas de red con arrastrar y soltar:** PC, portátil, servidor, impresora, móvil, tablet, Smart TV, hub, switch,
+  router y punto de acceso WiFi, unidos por cable o de forma inalámbrica.
+* **Simulación paso a paso:** sobres animados por cada paquete, pausa (F5), paso a paso (F6), control de velocidad,
+  filtros por protocolo y detalle de las capas de cada paquete. Solo se muestran los sobres entre los equipos que se
+  comunican (las difusiones a todos se pueden activar).
+* **Tres modos de trabajo:**
+  * **Simulado:** todo ocurre dentro del programa, con las IP del esquema.
+  * **Real:** un PC del esquema es el ordenador de verdad, con su IP y sus órdenes `ping`, `tracert`, `ipconfig`…
+  * **Intranet del aula:** los SalariaNet de varios ordenadores se descubren solos y los paquetes viajan por la red
+    del centro.
+* **Línea de comandos Cisco IOS:** `enable`, `configure terminal`, `ip address`, `no shutdown`, `ip route`,
+  `ip dhcp pool`, `vlan`, `switchport`, `show running-config`, `show ip route`… con abreviaturas y `?`.
+* **Configuración sin terminal:** campos rellenables para interfaces, rutas y DHCP del router, mostrando debajo las
+  órdenes IOS equivalentes.
+* **Servicios de red:** DHCP (automático en el router o con pools), DNS, servidor web y navegador, VLAN 802.1Q y
+  spanning tree simplificado.
+* **Calcular IPs:** reparte las direcciones de todo el esquema de una vez, con las rutas estáticas entre routers.
+* **Límite de equipos por red:** tiene en cuenta la máscara, la dirección de red y la de broadcast, y avisa cuando en
+  una red no caben más equipos.
+* **Calculadora IP:** red, broadcast, primera y última IP, número de equipos y máscara en binario, con las cuentas.
+* **Gestión de proyectos:** guardado y lectura de esquemas en archivos `.red`, impresión y memoria en PDF.
 
 ---
 
-## Documentación
+## 💻 Requisitos del Sistema
 
-Para profundizar en el funcionamiento de la aplicación tienes disponibles los siguientes recursos:
-
-- **Guía de usuario:** `docs/Guia_SalariaNet_actualizada.pdf`
-- **Memoria de la calculadora IP:** `docs/Memoria_calculadora_IP.pdf`
-- **Calculadora IP online:** `web/calculadora_ip.html`
-
-También puedes consultar la ayuda integrada en el programa.
+* **Sistema Operativo:** Windows 10, Windows 11 (64-bit), Windows 7 SP1 (versión aparte) o Linux (Ubuntu 20.04 o
+  posterior, 64-bit).
+* **Conexión de red:** solo necesaria para el modo Real, la intranet del aula (puertos **UDP 41000 a 41050** de la
+  red local) y la búsqueda de actualizaciones. El modo Simulado funciona sin conexión.
+* **Espacio libre en disco:** ~150 MB.
 
 ---
 
-## Tecnologías utilizadas
+## 🛠️ Tecnologías Internas
 
-SalariaNet está desarrollado utilizando:
+* **GUI & Lógica:** Python 3 + PySide6 (Qt6 for Python); PySide2 (Qt5) en la versión de Windows 7.
+* **Motor de simulación:** Ethernet, ARP, IPv4, ICMP, UDP (DHCP, DNS) y TCP (HTTP) programados en Python.
+* **Red del aula:** descubrimiento y túneles por UDP entre los ordenadores del centro.
+* **Instaladores:** PyInstaller + Inno Setup (Windows) y paquete `.deb` (Linux).
 
-| Tecnología | Utilización |
-|---|---|
-| Python | Lenguaje de programación |
-| PySide6 / Qt 6 | Interfaz gráfica |
-| PyInstaller | Distribución para Windows |
-| Debian packages | Distribución para Ubuntu |
+📖 Manual de uso completo: [Manual_SalariaNet.pdf](Manual_SalariaNet.pdf) (también en Ayuda → Cómo se usa).
 
 ---
 
-## Funcionalidades en desarrollo
+## 📜 Licencia y Créditos
 
-SalariaNet es un proyecto en evolución. Entre las funcionalidades que todavía no están implementadas se encuentran:
-
-- Enrutamiento dinámico (RIP y OSPF).
-- NAT.
-- Listas de control de acceso (ACL).
-- Router-on-a-stick y subinterfaces.
-- Servicios Telnet y SSH.
-- Servicios de correo y FTP.
-- Configuración de tipos de cable.
-- Vista física de la infraestructura de red.
-
----
-
-## Código fuente
-
-SalariaNet es un proyecto desarrollado en Python y organizado en diferentes módulos para facilitar su mantenimiento y ampliación.
-
-Si quieres consultar el código, colaborar o ejecutar el proyecto desde su código fuente, puedes utilizar este repositorio.
-
-**[Consultar el código fuente en GitHub](https://github.com/ajmartostorres-hub/SalariaNET)**
-
-### Ejecución desde el código fuente
-
-Requisitos: Python 3.8 o posterior.
-
-```bash
-python -m venv .venv
-```
-
-En Windows:
-
-```bash
-.venv\Scripts\activate
-```
-
-En Linux:
-
-```bash
-source .venv/bin/activate
-```
-
-Instala las dependencias:
-
-```bash
-pip install -r requirements.txt
-```
-
-Ejecuta la aplicación:
-
-```bash
-python red_aula.py
-```
-
----
-
-## Licencia
-
-SalariaNet es software libre y se distribuye bajo los términos de la **GNU General Public License v3.0 o posterior (GPL-3.0-or-later)**.
-
-Consulta el archivo `LICENSE` para conocer las condiciones de uso, modificación y distribución.
-
----
-
-**SalariaNet © 2026**
-
-*Una herramienta para aprender redes, experimentar con ellas y comprender cómo funciona Internet desde el aula.*
+* **Autor:** Alfonso José Martos Torres — I.E.S. Ivlia Salaria.
+* **Licencia:** Distribuido bajo la licencia **GNU General Public License v3.0 o posterior (GPLv3+)**. Consulta el
+  archivo [LICENSE](LICENSE).
+* Los instaladores incluyen PySide6 y Qt 6 sin modificar, distribuidos con la licencia LGPL v3.
